@@ -36,16 +36,7 @@ public class paymentns extends AppCompatActivity {
         amt_tv1.setPaintFlags(amt_tv1.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
 
 
-        Button lol = (Button) findViewById(R.id.submit);
-        lol.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent registerIntent = new Intent(paymentns.this, mainpage.class);
-                paymentns.this.startActivity(registerIntent);
-            }
-        });
-    }
-
+        
     public void onBackPressed() {
         Intent registerIntent = new Intent(paymentns.this, MainActivity2.class);
         paymentns.this.startActivity(registerIntent);
