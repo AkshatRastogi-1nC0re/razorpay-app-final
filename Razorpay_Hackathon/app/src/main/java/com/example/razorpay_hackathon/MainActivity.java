@@ -18,13 +18,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+         SharedPreferences paymentdata = getApplicationContext().getSharedPreferences("PD", 0);
+        String phoneNum  = paymentdata.getString("phone_number", null);
+        String amt  = paymentdata.getString("amount", null);
+        int amon = Integer.parseInt(amt);
+        amon = amon*100;
+        String amount = ""+amon;
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent registerIntent = new Intent(MainActivity.this, MainActivity2.class);
-                MainActivity.this.startActivity(registerIntent);
-            }
-        }, SPLASH_TIME_OUT);
-    }
-}
+        
