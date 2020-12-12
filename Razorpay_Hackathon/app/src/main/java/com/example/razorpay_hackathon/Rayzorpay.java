@@ -32,6 +32,15 @@ public class Rayzorpay extends AppCompatActivity {
 
         amt_tv1 = (TextView) findViewById(R.id.amttv1);
         amt_tv1.setText(amount);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent registerIntent = new Intent(MainActivity.this, MainActivity2.class);
+                MainActivity.this.startActivity(registerIntent);
+            }
+        }, SPLASH_TIME_OUT);
+    }
+}
 
         Button lol = (Button) findViewById(R.id.next);
         lol.setOnClickListener(new View.OnClickListener(){
