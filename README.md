@@ -1,4 +1,4 @@
-# razorpay-app-final
+# eligius-pay-ftx-hackathon
 
 Introduction
 
