@@ -4,29 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
-
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.razorpay.Checkout;
-import com.razorpay.PaymentResultListener;
-
-import org.json.JSONObject;
-
 import com.razorpay.Checkout;
 
 import org.json.JSONObject;
@@ -41,8 +18,7 @@ public class MainActivity2 extends Activity implements PaymentResultListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        ph = (EditText) findViewById(R.id.editTextPhone2);
-        amt = (EditText) findViewById(R.id.editTextNumber);
+       
 
         Button lol = (Button) findViewById(R.id.submit);
         lol.setOnClickListener(new View.OnClickListener(){
@@ -54,8 +30,6 @@ public class MainActivity2 extends Activity implements PaymentResultListener {
                 SharedPreferences paymentdata = getApplicationContext().getSharedPreferences("PD", 0);
                 SharedPreferences.Editor editor = paymentdata.edit();
 
-                editor.putString("phone_number", phnum);
-                editor.putString("amount", amount);
 
                 editor.apply();
                 startPayment();
@@ -79,12 +53,7 @@ public class MainActivity2 extends Activity implements PaymentResultListener {
         String email = "";
         String name = "";
 
-        SharedPreferences paymentdata = getApplicationContext().getSharedPreferences("PD", 0);
-        String phoneNum  = paymentdata.getString("phone_number", null);
-        String amt  = paymentdata.getString("amount", null);
-        int amon = Integer.parseInt(amt);
-        amon = amon*100;
-        String amount = ""+amon;
+       
 
 
         double lol = Double.parseDouble(phoneNum);
